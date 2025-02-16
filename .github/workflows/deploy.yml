@@ -19,10 +19,16 @@ jobs:
           node-version: "14"
 
       - name: Install dependencies
-        run: npm install
+        run: |
+            cd news-feed
+            npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+            cd news-feed
+            npm run build
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: |
+            cd news-feed
+            npm run deploy
