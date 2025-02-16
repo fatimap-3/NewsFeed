@@ -22,24 +22,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install dependencies
-      run: |
-            cd news-feed
-            npm install
+      - name: Install dependencies
+        run: |
+              cd news-feed
+              npm install
     
   build:
     runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - name: Build project
         run: |
-            cd news-feed
-            npm run build
-
- deploy:
+              cd news-feed
+              npm run build
+  deploy:
     runs-on: ubuntu-latest
 
-      - name: Deploy to GitHub Pages
+    steps:
+      - name: Deploy to github pages
         run: |
-            cd news-feed
-            npm run deploy
+              cd news-feed
+              npm run deploy
+    
+
