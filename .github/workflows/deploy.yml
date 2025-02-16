@@ -20,11 +20,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-            ls
-      #       npm install
+            cd news-feed
+            npm install
 
-      # - name: Build project
-      #   run: npm run build
+      - name: Build project
+        run: |
+            cd news-feed
+            npm run build
 
-      # - name: Deploy to GitHub Pages
-      #   run: npm run deploy
+      - name: Deploy to GitHub Pages
+        run: |
+            cd news-feed
+            npm run deploy
