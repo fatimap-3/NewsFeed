@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
+      - name: check the current dir
+        run: ls
 
       - name: Install dependencies
         run: npm install
