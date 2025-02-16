@@ -18,7 +18,8 @@ jobs:
         with:
           node-version: "14"
       - name: check the current dir
-        run: ls
+        run: |
+            cd news-feed
 
       - name: Install dependencies
         run: npm install
