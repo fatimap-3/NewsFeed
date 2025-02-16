@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-
+      
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,15 +18,26 @@ jobs:
         with:
           node-version: "14"
 
-      - name: Install dependencies
-        run: |
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install dependencies
+      run: |
             cd news-feed
             npm install
+    
+  build:
+    runs-on: ubuntu-latest
 
+      steps:
       - name: Build project
         run: |
             cd news-feed
             npm run build
+
+ deploy:
+    runs-on: ubuntu-latest
 
       - name: Deploy to GitHub Pages
         run: |
